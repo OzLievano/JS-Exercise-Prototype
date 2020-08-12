@@ -85,9 +85,40 @@ console.log(Oz.myString('Oz',50));
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
-function Car() {
-
+function Car(model,milesPerGallon) {
+  this.model = model;
+  this.milesPerGallon = milesPerGallon;
+  this.tank = 0;
+  this.odometer = 0;
 }
+
+Car.prototype.fill = function(gallons) {
+  return this.tank += gallons; 
+}
+
+Car.prototype.drive = function(distance){
+  this.odometer = this.odometer + distance;
+  let aTank = this.milesPerGallon;
+  if(distance === aTank){
+    return this.tank -=1;
+  }else if(distance > aTank * 2){
+    return this.tank -=2;
+  }else if(distance > aTank * 3){
+    return this.tank -=3;
+  }else if(distance > aTank * Tank){
+    return `You ran out of gas at ${this.odometer} miles!`
+  }
+  
+  return this.tank,this.odometer;
+}
+
+const Ford150 = new Car('Ford-150',20);
+console.log(Ford150);
+
+Ford150.fill(26);
+console.log(Ford150)
+Ford150.drive(520);
+console.log(Ford150)
 
 /*
   TASK 3
