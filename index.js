@@ -56,15 +56,18 @@ Person.prototype.poop = function(){
   return this.stomach;
 }
 
-Person.prototype.toString = function(name,age){
+Person.prototype.myString = function(name,age){
   return `${this.name}, ${this.age.toString()}`
 }
+
 
 const Oz = new Person('Ozzy',50);
 console.log(Oz);
 
 Oz.eat('cranberries')
 console.log(Oz);
+
+console.log(Oz.myString('Oz',50));
 
 
 
