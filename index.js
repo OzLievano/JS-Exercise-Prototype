@@ -57,7 +57,7 @@ Person.prototype.poop = function(){
 }
 
 Person.prototype.myString = function(name,age){
-  return `${this.name}, ${this.age.toString()}`
+  return `${name}, ${age.toString()}`;
 }
 
 
@@ -135,10 +135,10 @@ console.log(myBaby);
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Window/Global Object binding points the console object and all of its methods and attributes
+  2. Implicit Binding points to the object that is right before its method. meaning Remote{ this.name } would give us the name of the remote.
+  3. New Binding points to the argument that is being passed into the Constructor.
+  4. Explicit binding is passing a specific argument to a method to override constructor object attribute values.
 */
 
 
