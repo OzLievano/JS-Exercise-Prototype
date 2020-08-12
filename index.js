@@ -56,8 +56,8 @@ Person.prototype.poop = function(){
   return this.stomach;
 }
 
-Person.prototype.myString = function(name,age){
-  return `${name}, ${age.toString()}`;
+Person.prototype.toString = function(){
+  return `${this.name}, ${this.age}`;
 }
 
 
